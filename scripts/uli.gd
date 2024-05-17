@@ -5,7 +5,23 @@ extends CharacterBody2D
 # z index = 1
 # y sort enabled
 #
+# Set the camera on the character first to set the viewport subject
+# Next...
+# Go to the world scene
+# And put a `Camera2D` object there
+# The camera from the character will be used as a mock for
+# _coordinates of the map camera and the character relatively_
 #
+
+# - Make sure `Window > Scale` is reset to 1
+
+# | `Camera2D` Limit
+# top = 0 (relative to the character scene)
+# bottom = world | bottom y position
+
+
+# world | left x position
+# world | right x position
 
 var current_direction = 'down'
 
@@ -77,8 +93,6 @@ func play_animation(direction, movement):
 			
 			
 	elif direction == "down":
-
-		
 		if (movement == 0):
 			animation.play("idle_front")
 		
@@ -86,8 +100,6 @@ func play_animation(direction, movement):
 			animation.play("walking_front")
 			
 	elif direction == "up":
-
-		
 		if (movement == 0):
 			animation.play("idle_back")
 		

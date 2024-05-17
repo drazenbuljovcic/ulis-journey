@@ -1,8 +1,11 @@
-# https://www.youtube.com/playlist?list=PL3cGrGHvkwn0zoGLoGorwvGj6dHCjLaGd
-
-extends Node2D
+extends Camera2D
 
 
+#
+# | Drag
+# Horizontal Enabled
+# Vertical Enabled
+#
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -1,2 +1,5 @@
 # Godot 4+ specific ignores
 .godot/
+
+web/node_modules
+web/*.wasm

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://0chlmr0deney"]
+[gd_scene load_steps=28 format=3 uid="uid://0chlmr0deney"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_8pe42"]
 [ext_resource type="Texture2D" uid="uid://822fhv33m4n1" path="res://art/rocks/small_rock.png" id="1_d8rv7"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://tenyjof47tha" path="res://art/grass/medium_grass.png" id="8_xwqd2"]
 [ext_resource type="Texture2D" uid="uid://fdavb5nl7go3" path="res://art/grass/big_grass.png" id="9_md5yn"]
 [ext_resource type="Script" path="res://scripts/forest_map_1.gd" id="12_ofe8w"]
+[ext_resource type="Script" path="res://scenes/world_Camera2D.gd" id="15_gce46"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dwito"]
 texture = ExtResource("1_d8rv7")
@@ -702,3 +703,7 @@ script = ExtResource("12_ofe8w")
 z_index = 1
 y_sort_enabled = true
 position = Vector2(379, 229)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(764, 437)
+script = ExtResource("15_gce46")
