@@ -177,6 +177,74 @@ animations = [{
 "texture": SubResource("AtlasTexture_1y07v")
 }],
 "loop": true,
+"name": &"running_back",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtlwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bam5x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02k7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b37lv")
+}],
+"loop": true,
+"name": &"running_front",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oubpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfa0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwmeg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gvub")
+}],
+"loop": true,
+"name": &"running_side_left",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oubpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfa0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwmeg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gvub")
+}],
+"loop": true,
+"name": &"running_side_right",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqgg8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6pip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwbob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1y07v")
+}],
+"loop": true,
 "name": &"walking_back",
 "speed": 10.0
 }, {
@@ -224,9 +292,11 @@ shape = SubResource("CircleShape2D_5uq6m")
 
 [node name="UlisAnimation" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0nr5t")
-animation = &"idle_side"
+animation = &"running_back"
+frame_progress = 0.464444
+flip_h = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="player_camera" type="Camera2D" parent="."]
 position = Vector2(1, 2)
 zoom = Vector2(4, 4)
 limit_left = 0

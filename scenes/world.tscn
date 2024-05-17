@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://0chlmr0deney"]
+[gd_scene load_steps=27 format=3 uid="uid://0chlmr0deney"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_8pe42"]
 [ext_resource type="Texture2D" uid="uid://822fhv33m4n1" path="res://art/rocks/small_rock.png" id="1_d8rv7"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://tenyjof47tha" path="res://art/grass/medium_grass.png" id="8_xwqd2"]
 [ext_resource type="Texture2D" uid="uid://fdavb5nl7go3" path="res://art/grass/big_grass.png" id="9_md5yn"]
 [ext_resource type="Script" path="res://scripts/forest_map_1.gd" id="12_ofe8w"]
-[ext_resource type="Script" path="res://scenes/world_Camera2D.gd" id="15_gce46"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dwito"]
 texture = ExtResource("1_d8rv7")
@@ -41,10 +40,11 @@ texture_region_size = Vector2i(48, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wtwns"]
 texture = ExtResource("2_i03xk")
-texture_region_size = Vector2i(56, 56)
+texture_region_size = Vector2i(1, 1)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24.9255, -1.94455, -8, 1.67937, 18.1196, 3.27036, 6.45235, 13.7002, -8.22012, 12.4628)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
@@ -686,7 +686,7 @@ script = ExtResource("1_8pe42")
 
 [node name="forest_map_1" type="TileMap" parent="."]
 y_sort_enabled = true
-position = Vector2(193, 97)
+position = Vector2(192, 95)
 tile_set = SubResource("TileSet_vsnim")
 format = 2
 layer_0/name = "ground"
@@ -703,7 +703,3 @@ script = ExtResource("12_ofe8w")
 z_index = 1
 y_sort_enabled = true
 position = Vector2(379, 229)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(764, 437)
-script = ExtResource("15_gce46")

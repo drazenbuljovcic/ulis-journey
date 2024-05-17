@@ -1,5 +1,11 @@
 extends CharacterBody2D
 
+# @TODO fix: joypad keys not working in browser
+# gamepad tester
+# connect your gamepad via bluetooth
+# test it out
+# https://hardwaretester.com/gamepad
+
 #
 # Ordering
 # z index = 1
@@ -13,6 +19,17 @@ extends CharacterBody2D
 # _coordinates of the map camera and the character relatively_
 #
 
+# 
+# Created this camera based on character's
+# Use to adjust `transform` properties
+#
+# | Transform
+# Position
+# world | top y position
+# world | bottom y position
+# world | left x position
+# world | right x position
+
 # - Make sure `Window > Scale` is reset to 1
 
 # | `Camera2D` Limit
@@ -23,40 +40,70 @@ extends CharacterBody2D
 # world | left x position
 # world | right x position
 
-var current_direction = 'down'
 
-const speed = 80
+const defaultSpeed = 80
  
 func _ready():
 	$UlisAnimation.play("idle_front")
 
 func _physics_process(delta):
+	
 	process_player_movement(delta)
 	
 
+
+#var isRunning
+#func effectIsRunning():
+	## ProjectSettings > Input map
+	#isRunning = Input.is_action_pressed("Run") # is shift key pressed
+
+
+
+func getSpeed(isRunning):
+	if (isRunning):
+		return defaultSpeed * 2
+	return defaultSpeed
+
+# player facing down bug after walking up
 var prevUpKeyPressed
 
-func process_player_movement(delta):	
+func process_player_movement(delta):
+	var isRunning = Input.is_action_pressed("Run") # is shift key pressed
+	var speed = getSpeed(isRunning)
+	
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = speed
 		velocity.y = 0
-		play_animation("right", 1)
+		
+		if (isRunning):
+			play_animation("right", 2)
+		else:
+			play_animation("right", 1)
+			
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -speed
 		velocity.y = 0
 		play_animation("left", 1)
+		
+		if (isRunning):
+			play_animation("left", 2)
+		else:
+			play_animation("left", 1)
+			
 	elif Input.is_action_pressed("ui_down"):
 		prevUpKeyPressed = false;
 		
 		velocity.x = 0
 		velocity.y = speed
 		play_animation("down", 1)
+		
 	elif Input.is_action_pressed("ui_up"):
 		prevUpKeyPressed = true;
 		
 		velocity.x = 0
 		velocity.y = -speed
 		play_animation("up", 1)
+		
 	else:
 		# if last key pressed is up keep that position
 		if (prevUpKeyPressed):
@@ -81,6 +128,9 @@ func play_animation(direction, movement):
 		
 		if (movement == 1):
 			animation.play("walking_side")
+	
+		if (movement == 2):
+			animation.play("running_side_right")
 			
 	elif direction == "left":
 		animation.flip_h = true
@@ -91,6 +141,8 @@ func play_animation(direction, movement):
 		if (movement == 1):
 			animation.play("walking_side")
 			
+		if (movement == 2):
+			animation.play("running_side_left")
 			
 	elif direction == "down":
 		if (movement == 0):
@@ -99,9 +151,15 @@ func play_animation(direction, movement):
 		if (movement == 1):
 			animation.play("walking_front")
 			
+		if (movement == 2):
+			animation.play("running_front")
+			
 	elif direction == "up":
 		if (movement == 0):
 			animation.play("idle_back")
 		
 		if (movement == 1):
 			animation.play("walking_back")
+		
+		if (movement == 2):
+			animation.play("running_back")
