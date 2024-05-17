@@ -2,4 +2,4 @@
 .godot/
 
 web/node_modules
-web/*.wasm
+web/public/*.wasm
