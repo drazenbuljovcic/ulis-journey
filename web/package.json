@@ -4,7 +4,9 @@
   "description": "",
   "main": "UlisJourney.audio.worklet.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node api/index.js",
+    "build": "echo Nothing to build.",
+    "vercel-build": "echo Nothing to build."
   },
   "author": "",
   "license": "ISC",

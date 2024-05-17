@@ -7,7 +7,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static("public")); // assuming your index.html is in a directory named 'public'
+app.use(express.static("public"));
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
