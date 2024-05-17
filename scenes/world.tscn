@@ -1,19 +1,19 @@
 [gd_scene load_steps=27 format=3 uid="uid://0chlmr0deney"]
 
-[ext_resource type="Script" path="res://scenes/world.gd" id="1_8pe42"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_8pe42"]
 [ext_resource type="Texture2D" uid="uid://822fhv33m4n1" path="res://art/rocks/small_rock.png" id="1_d8rv7"]
 [ext_resource type="Texture2D" uid="uid://crhsmwftlhybl" path="res://art/grass/grass.png" id="1_tkqux"]
 [ext_resource type="Texture2D" uid="uid://wueid38ayv7n" path="res://art/rocks/medium_rock.png" id="2_i03xk"]
 [ext_resource type="Texture2D" uid="uid://db23gdy15c4n4" path="res://art/grass/ground_grass.png" id="2_vddne"]
 [ext_resource type="Texture2D" uid="uid://bgxap7l3n8yu3" path="res://art/rocks/big_rock.png" id="3_ijpks"]
 [ext_resource type="PackedScene" uid="uid://bpq3t5nbchyyu" path="res://scenes/uli.tscn" id="3_mnkn5"]
-[ext_resource type="Texture2D" uid="uid://f83j5h1e055c" path="res://big_bush.png" id="4_n4j1o"]
+[ext_resource type="Texture2D" uid="uid://f83j5h1e055c" path="res://art/bushes/big_bush.png" id="4_n4j1o"]
 [ext_resource type="Texture2D" uid="uid://cc5i5xbk1ocme" path="res://art/bushes/medium_bush.png" id="5_oiruu"]
 [ext_resource type="Texture2D" uid="uid://dacpnefhi6xt2" path="res://art/bushes/small_bush.png" id="6_pu1v5"]
 [ext_resource type="Texture2D" uid="uid://cspxg2q2xomts" path="res://art/grass/small_grass.png" id="7_jox7c"]
 [ext_resource type="Texture2D" uid="uid://tenyjof47tha" path="res://art/grass/medium_grass.png" id="8_xwqd2"]
 [ext_resource type="Texture2D" uid="uid://fdavb5nl7go3" path="res://art/grass/big_grass.png" id="9_md5yn"]
-[ext_resource type="Script" path="res://forest_map_1.gd" id="12_ofe8w"]
+[ext_resource type="Script" path="res://scripts/forest_map_1.gd" id="12_ofe8w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dwito"]
 texture = ExtResource("1_d8rv7")
