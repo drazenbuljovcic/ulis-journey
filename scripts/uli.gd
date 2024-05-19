@@ -36,7 +36,6 @@ extends CharacterBody2D
 # top = 0 (relative to the character scene)
 # bottom = world | bottom y position
 
-
 # world | left x position
 # world | right x position
 
