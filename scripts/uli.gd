@@ -72,7 +72,7 @@ func process_player_movement(delta):
 	# option key
 	if Input.is_action_just_pressed("dash"):
 		Dash.start_dash(dash_length)
-
+		
 	var speed = getSpeed(is_running, Dash.is_dashing())
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = speed
@@ -85,7 +85,7 @@ func process_player_movement(delta):
 			play_animation("right", 3)
 		else:
 			play_animation("right", 1)
-		
+						
 			
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -speed
