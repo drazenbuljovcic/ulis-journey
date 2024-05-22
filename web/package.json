@@ -5,13 +5,18 @@
   "main": "UlisJourney.audio.worklet.js",
   "scripts": {
     "start": "node api/index.js",
-    "build": "echo Nothing to build.",
-    "vercel-build": "echo Nothing to build."
+    "dev": "npm run build && node api/index.js",
+    "build": "rimraf public/src && cp -R -f src/ public/src",
+    "vercel-build": "echo Nothing to build.",
+    "deploy": "npm run build && vercel --prod"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
     "next": "^14.2.3"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.7"
   }
 }
