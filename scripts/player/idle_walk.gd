@@ -40,7 +40,7 @@ extends CharacterBody2D
 # world | right x position
 
 
-const default_speed = 80
+const default_speed = 100
 
 const dash_speed = 300
 const dash_length = .25
